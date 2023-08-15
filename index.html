@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200&family=Fredoka&family=Hanken+Grotesk:wght@500;700;800&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/00b912df0b.js" crossorigin="anonymous"></script>
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+<style>
+:root{
+    --white: hsl(0, 0%, 100%);
+    --gris: #c6beff;
+  }
+  
+
+  body {
+    background: white;
+    width: 100%;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px;
+    font-family: 'Hanken Grotesk', sans-serif;
+    border: 0;
+    padding: 0;
+  }
+
+  .container {
+    display: flex;
+    width: 900px;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .headerR {
+    color: var(--gris);
+  }
+
+  .result {
+    background: linear-gradient(to bottom, hsl(251, 100%, 67%), hsl(241, 81%, 54%));
+    height: 100%;
+    width: 450px;
+    border-radius: 22px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: -30px;
+
+  }
+
+  .result-number {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #bcb7bb;
+    width: 200px;
+    height: 200px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: linear-gradient(to top, hsla(256, 72%, 46%, 1), hsla(256, 72%, 46%, 1));
+  }
+
+  .result-number h1 {
+    color: white;
+    font-size: 64px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+
+  .result-number p {
+    margin-top: -30px;
+    font-weight: bold;
+    color: var(--gris);
+  }
+
+  .summary {
+    background: white;
+    height: 100%;
+    width: 450px;
+    border-radius: 22px;
+    z-index: 2;
+    box-shadow:   1px 30px 30px 0px rgb(174, 214, 241 );;
+    
+  }
+
+  .other {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+  }
+
+  .other h2 {
+    margin-bottom: 0;
+    color: var(--white);
+  }
+
+  .other p {
+    width: 200px;
+    margin-left: 18px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--gris);
+    font-weight: 100;
+  }
+
+  .summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: space-between;
+
+  }
+
+  .headerS {
+    margin-right: 212px;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 318px;
+    height: 360px;
+    
+    
+
+  }
+
+  .item {
+    border-radius: 8px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+  .item img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .itemLeft {
+    display: flex;
+
+  }
+
+  .Reaction {
+    background-color: #fef6f6;
+    color: hsl(0, 100%, 67%);
+  }
+
+  .Memory {
+    color: hsl(39, 100%, 56%);
+    background-color: #fefbf2;
+  }
+
+  .Verbal {
+    color: hsl(166, 100%, 37%);
+    background-color: #f4fbfa;
+  }
+
+  .Visual {
+    color: hsl(234, 85%, 45%);
+    background-color: #f3f3fd;
+  }
+
+  #numberR {
+    color: black;
+    background-color: transparent;
+  }
+
+  #baseNumber {
+    color: #c1c3d0;
+    background-color: transparent;
+  }
+
+  button {
+    margin-top: -8px;
+    width: 319px;
+    height: 50px;
+    border-radius: 26px;
+    border: none;
+    font-family: 'Hanken Grotesk', sans-serif;
+    color: var(--white);
+    background-color: #32395a;
+  }
+
+  @media (max-width: 375px) {
+    .container {
+      flex-direction: column;
+      margin-top: 80px;
+    }
+
+    .result, .summary {
+      width: 100%;
+      align-items: center;
+      margin-left: 210px;
+    }
+
+
+    
+  }
+</style>
+</head>
+<body>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Jesus Sierra</a>.
+  </div>
+  <section class="card">
+
+    <div class="container">
+      <div class="result">
+        <div class="headerR">
+          <h2>Your Result</h2>
+        </div>
+        <div class="result-number">
+            <h1>76</h1>
+            <p>of 100</p>
+        </div>
+        <div class="other">
+          <h2>Great</h2>
+          <p>You scored higher than 65% of the people who have taken these tests.</p>
+          </div>
+        </div>
+  
+      <div class="summary">
+        <div class="headerS">
+          <h2>Summary</h2>
+        </div>
+
+        <div class="items">
+          
+          <div class="item Reaction" >
+            <div class="itemLeft">
+              <img src="./assets/images/icon-reaction.svg" alt="rayo">Reaction  
+            </div>
+            <div class="itemRight">
+              <span id="numberR"> 80 </span> <span id="baseNumber"> / 100</span>
+            </div>
+        </div>
+
+          <div class="item Memory">
+            <div class="itemLeft">
+              <img src="./assets/images/icon-memory.svg" alt="memory">Memory
+            </div>
+            <div class="itemRight">
+              <span id="numberR">92</span> <span id="baseNumber"> / 100</span>
+            </div>
+        </div>
+
+          <div class="item Verbal">
+            <div class="itemLeft">
+              <img src="./assets/images/icon-verbal.svg" alt="verbal">Verbal
+            </div>
+            <div class="itemRight">
+              <span id="numberR">61</span> <span id="baseNumber">/ 100</span>
+            </div>
+        </div>
+
+          <div class="item Visual">
+            <div class="itemLeft">
+              <img src="./assets/images/icon-visual.svg" alt="visual">Visual
+            </div>
+            <div class="itemRight">
+              <span id="numberR">72</span> <span id="baseNumber">/ 100</span>
+            </div>
+        </div>
+
+        </div>
+
+  <button>Continue</button>
+
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
